@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[我的第一篇博客，利用hexo+GitHub 搭建博客]]></title>
-    <url>%2F2018%2F08%2F24%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[为什么要搭建自己的博客呢 种一棵树最好的时候是十年前，其次是现在 两个原因 想有一个属于自己的写文章的地方 身为一个程序员这还需要理由吗？ 这篇文章不是教程，只是搭建博客的过程中的一些感受，首先特别感谢吴润的知乎专栏https://zhuanlan.zhihu.com/p/26625249 以及jmyblog 的博客http://jmyblog.top nMask’s 的博客https://thief.one 我的博客是参考了这两篇文章搭建好的，期间也遇到了很多莫名其妙的bug好在有万能的Google，在此建议想要搭建博客的同学一定要有耐心，出问题是必然的，不要担心，你遇到的坑很多人都遇到过，所以请保持一个平常心。接下来是我总结的搭建过程，比较简洁。 搭建博客步骤 获得个人网站域名（阿里云） GitHub创建个人仓库 安装Git 和 Node.js 安装Hexo 推送网站 绑定域名 个性化设置 具体的搭建过程参考上面的几篇文章，我的建议和遇到的bug是： 域名买一个简单并且便宜的，我在阿里云买了一个.top的，只要5/年。 在安装Hexo这一步，hexo init blog之后的命令都是在blog/blog这个目录下进行的，一定要注意，不能弄错了。 如果你在安装Hexo或者之前的步骤中有报错，建议你重新下载安装。因为这之前的过程全是安装的部分，一旦出错，没有别的原因，一定是你的操作有问题。而且你解决错误的时间一定要比重新安装耗费的时间长。 关于Markdown，建议用文中推荐的markdownPad2，下载后预览功能不能使用的问题需要下载awesomium插件,部分功能要升级到专业版才可以使用。 域名绑定时遇到了问题，只能采取A 记录， 映射到haitang10.github.io 的IP地址。 next主题竟然改地址了，可恶！！！ 新地址为https://github.com/theme-next，git clone https://github.com/theme-next/hexo-theme-next themes / next 个性化参考 next文档http://theme-next.iissnan.com/getting-started.html 未完，待续]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>GitHub</tag>
-        <tag>博客</tag>
-        <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[博客个性化设置]]></title>
     <url>%2F2018%2F08%2F24%2Fnext%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[hexo 个性化设置参考资料 next 常见问题 http://theme-next.iissnan.com/faqs.html nMask 的博客 https://thief.one/2017/03/03/Hexo搭建博客教程/ 为NexT主题添加文章阅读量统计功能 https://notes.wanghao.work ##首先是主题的一些简单设定，主要是更改站点配置文件和主题配置文件，包括：## 选择主题和语言 菜单项和图标 头像，选择图片路径 站点描述 添加标签和分类页面 设置字体（没有设置） 侧边栏social连接（此处有bug） 打赏功能 腾讯404页面 动画（未设置） 然后是一些第三方服务，包括 评论系统（来必力） 搜索服务（采用Local Search） 数据统计和分析，统计浏览人数和文章阅读次数 进阶内容 设置阅读全文，在文章中使用 手动进行截断， 图床（七牛云）]]></content>
@@ -24,6 +10,20 @@
       <tags>
         <tag>博客</tag>
         <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我的第一篇博客，利用hexo+GitHub 搭建博客]]></title>
+    <url>%2F2018%2F08%2F24%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[为什么要搭建自己的博客呢 种一棵树最好的时候是十年前，其次是现在 两个原因 想有一个属于自己的写文章的地方 身为一个程序员这还需要理由吗？ 这篇文章不是教程，只是搭建博客的过程中的一些感受，首先特别感谢吴润的知乎专栏https://zhuanlan.zhihu.com/p/26625249 以及jmyblog 的博客http://jmyblog.top nMask’s 的博客https://thief.one 我的博客是参考了这两篇文章搭建好的，期间也遇到了很多莫名其妙的bug好在有万能的Google，在此建议想要搭建博客的同学一定要有耐心，出问题是必然的，不要担心，你遇到的坑很多人都遇到过，所以请保持一个平常心。接下来是我总结的搭建过程，比较简洁。 搭建博客步骤 获得个人网站域名（阿里云） GitHub创建个人仓库 安装Git 和 Node.js 安装Hexo 推送网站 绑定域名 个性化设置 具体的搭建过程参考上面的几篇文章，我的建议和遇到的bug是： 域名买一个简单并且便宜的，我在阿里云买了一个.top的，只要5/年。 在安装Hexo这一步，hexo init blog之后的命令都是在blog/blog这个目录下进行的，一定要注意，不能弄错了。 如果你在安装Hexo或者之前的步骤中有报错，建议你重新下载安装。因为这之前的过程全是安装的部分，一旦出错，没有别的原因，一定是你的操作有问题。而且你解决错误的时间一定要比重新安装耗费的时间长。 关于Markdown，建议用文中推荐的markdownPad2，下载后预览功能不能使用的问题需要下载awesomium插件,部分功能要升级到专业版才可以使用。 域名绑定时遇到了问题，只能采取A 记录， 映射到haitang10.github.io 的IP地址。 next主题竟然改地址了，可恶！！！ 新地址为https://github.com/theme-next，git clone https://github.com/theme-next/hexo-theme-next themes / next 个性化参考 next文档http://theme-next.iissnan.com/getting-started.html 未完，待续]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>next</tag>
+        <tag>hexo</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
