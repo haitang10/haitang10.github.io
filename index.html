@@ -1031,20 +1031,35 @@
 -->
 
 <div>
+<span id="showDays"></span>
+</div>
+<div>
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
   <span id="busuanzi_container_site_uv">
-    本站访客数: <span id="busuanzi_value_site_uv"></span>
+    访客数: <span id="busuanzi_value_site_uv"></span>
   </span>
+  <span> | </span>
+  <i class="fa fa-eye"></i>
   <span id="busuanzi_container_site_pv">
-    本站总访问量:<span id="busuanzi_value_site_pv"></span>次
+    总访问量:<span id="busuanzi_value_site_pv"></span>次
   </span>
 </div>
+<span> | </span>
 <div class="theme-info">
   <div class="powered-by"></div>
+    <i class="fa fa-pencil"></i>
     <span class="post-count">博客全站共1,014字</span>
   </div>
 </div>
+
+<script>
+	var birthDay = new Date('09/1/2016');
+	var now = new Date();
+	var duration = now.getTime() - birthDay.getTime();
+	var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+	document.getElementById('showDays').innerHTML='本站已运行' + total + '天';
+</script>
 
         
 
