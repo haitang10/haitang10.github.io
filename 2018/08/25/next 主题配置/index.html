@@ -117,7 +117,7 @@
 <meta property="og:description" content="next 主题 个性化设置">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/08/25/next%20主题配置/images/next.jpg">
-<meta property="og:updated_time" content="2018-08-28T11:21:50.940Z">
+<meta property="og:updated_time" content="2018-08-28T11:30:05.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客个性化设置">
 <meta name="twitter:description" content="next 主题 个性化设置">
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-28 19:21:50" itemprop="dateModified" datetime="2018-08-28T19:21:50+08:00">2018-08-28</time>
+                <time title="修改时间：2018-08-28 19:30:05" itemprop="dateModified" datetime="2018-08-28T19:30:05+08:00">2018-08-28</time>
               
             
           </span>
@@ -514,7 +514,18 @@
 NexT theme site and other site that integrated this function using a similar way.
 </code></pre><p>具体信息请看 GitHub文档<a href="https://github.com/theme-next/hexo-leancloud-counter-security" target="_blank" rel="noopener">https://github.com/theme-next/hexo-leancloud-counter-security</a></p>
 <p>修复此问题见<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/LEANCLOUD-COUNTER-SECURITY.md" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/LEANCLOUD-COUNTER-SECURITY.md</a></p>
-<h2 id="某些主题设置不会立即生效，请耐心等待几分钟！！！"><a href="#某些主题设置不会立即生效，请耐心等待几分钟！！！" class="headerlink" title="某些主题设置不会立即生效，请耐心等待几分钟！！！"></a>某些主题设置不会立即生效，请耐心等待几分钟！！！</h2><h2 id="返回顶部按钮在屏幕尺寸小于991px时自动隐藏"><a href="#返回顶部按钮在屏幕尺寸小于991px时自动隐藏" class="headerlink" title="返回顶部按钮在屏幕尺寸小于991px时自动隐藏"></a>返回顶部按钮在屏幕尺寸小于991px时自动隐藏</h2><p>解决办法：</p>
+<h2 id="某些主题设置不会立即生效，请耐心等待几分钟！！！"><a href="#某些主题设置不会立即生效，请耐心等待几分钟！！！" class="headerlink" title="某些主题设置不会立即生效，请耐心等待几分钟！！！"></a>某些主题设置不会立即生效，请耐心等待几分钟！！！</h2><h2 id="返回顶部按钮在屏幕尺寸小于991px时自动隐藏"><a href="#返回顶部按钮在屏幕尺寸小于991px时自动隐藏" class="headerlink" title="返回顶部按钮在屏幕尺寸小于991px时自动隐藏"></a>返回顶部按钮在屏幕尺寸小于991px时自动隐藏</h2><p>在移动端发现没有返回顶部按钮，调试时发现在页面宽度小于991px时，存在下列css 代码：</p>
+<pre><code>media (min-width: 768px) and (max-width: 991px) {
+  .back-to-top {
+display: none !important;
+      }
+}
+@media (max-width: 767px) {
+  .back-to-top {
+display: none !important;
+      }
+}
+</code></pre><p>解决办法：</p>
 <p>在<code>\themes\next-reloaded\source\css\_common\components</code><br>中的<code>back-to-top.styl</code>和 <code>back-to-top-sidebar.styl</code>文件中删除</p>
 <pre><code>+tablet() {
   fixbutton() if hexo-config(&apos;sidebar.onmobile&apos;);
@@ -524,9 +535,9 @@ NexT theme site and other site that integrated this function using a similar way
   fixbutton() if hexo-config(&apos;sidebar.onmobile&apos;);
   hide() if not hexo-config(&apos;sidebar.onmobile&apos;);
    }
-</code></pre><p>原因是在 </p>
+</code></pre><p>出现这个现象的原因是在 </p>
 <p><code>\themes\next-reloaded\source\css\_common\scaffolding\mobile.styl</code> </p>
-<p>文件中存在</p>
+<p>文件中存在这几行代码</p>
 <pre><code>&gt; 768px &amp; &lt; 991px
    +tablet() {
    }
@@ -850,7 +861,7 @@ NexT theme site and other site that integrated this function using a similar way
 <div class="theme-info">
   <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共1.2k字</span>
+    <span class="post-count">博客全站共1.3k字</span>
   </div>
 </div>
 
