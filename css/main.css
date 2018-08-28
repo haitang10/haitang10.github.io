@@ -1085,16 +1085,6 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .back-to-top {
-    display: none !important;
-  }
-}
-@media (max-width: 767px) {
-  .back-to-top {
-    display: none !important;
-  }
-}
 .back-to-top.back-to-top-on {
   bottom: 30px;
 }
@@ -1962,7 +1952,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5e9f;
+  background: #ff79b9;
 }
 .links-of-blogroll {
   font-size: 13px;
