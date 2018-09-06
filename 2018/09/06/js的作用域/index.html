@@ -109,17 +109,17 @@
 
 
 
-  <meta name="description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）1.在es5中，js没有块级作用域，意思是函数内部可以读取全局变量，并且函数内部的变量（局部变量）可以覆盖掉全局变量的值！！这一点非常令人头疼。 看例子  　var n=1  function f1(){    alert(n); } f1(); // 1 函数f1中并没有定义n 这个变量，但是还是正确输出了，为什么？因为aler">
+  <meta name="description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js的作用域">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/js的作用域/index.html">
 <meta property="og:site_name" content="haitang10&#39;s blog">
-<meta property="og:description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）1.在es5中，js没有块级作用域，意思是函数内部可以读取全局变量，并且函数内部的变量（局部变量）可以覆盖掉全局变量的值！！这一点非常令人头疼。 看例子  　var n=1  function f1(){    alert(n); } f1(); // 1 函数f1中并没有定义n 这个变量，但是还是正确输出了，为什么？因为aler">
+<meta property="og:description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-06T10:53:26.381Z">
+<meta property="og:updated_time" content="2018-09-06T10:56:01.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js的作用域">
-<meta name="twitter:description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）1.在es5中，js没有块级作用域，意思是函数内部可以读取全局变量，并且函数内部的变量（局部变量）可以覆盖掉全局变量的值！！这一点非常令人头疼。 看例子  　var n=1  function f1(){    alert(n); } f1(); // 1 函数f1中并没有定义n 这个变量，但是还是正确输出了，为什么？因为aler">
+<meta name="twitter:description" content="js的作用域问题首先js没有块级作用域（ES6中实际上增加了这一点）">
 
 
 
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="创建时间：2018-09-06 17:15:56 / 修改时间：18:53:26" itemprop="dateCreated datePublished" datetime="2018-09-06T17:15:56+08:00">2018-09-06</time>
+              <time title="创建时间：2018-09-06 17:15:56 / 修改时间：18:56:01" itemprop="dateCreated datePublished" datetime="2018-09-06T17:15:56+08:00">2018-09-06</time>
             
 
             
@@ -441,7 +441,8 @@
       
 
       
-        <h1 id="js的作用域问题"><a href="#js的作用域问题" class="headerlink" title="js的作用域问题"></a>js的作用域问题</h1><h2 id="首先js没有块级作用域（ES6中实际上增加了这一点）"><a href="#首先js没有块级作用域（ES6中实际上增加了这一点）" class="headerlink" title="首先js没有块级作用域（ES6中实际上增加了这一点）"></a>首先js没有块级作用域（ES6中实际上增加了这一点）</h2><p>1.在es5中，js没有块级作用域，意思是函数内部可以读取全局变量，并且函数内部的变量（局部变量）可以覆盖掉全局变量的值！！这一点非常令人头疼。</p>
+        <h1 id="js的作用域问题"><a href="#js的作用域问题" class="headerlink" title="js的作用域问题"></a>js的作用域问题</h1><h2 id="首先js没有块级作用域（ES6中实际上增加了这一点）"><a href="#首先js没有块级作用域（ES6中实际上增加了这一点）" class="headerlink" title="首先js没有块级作用域（ES6中实际上增加了这一点）"></a>首先js没有块级作用域（ES6中实际上增加了这一点）</h2><a id="more"></a>
+<p>1.在es5中，js没有块级作用域，意思是函数内部可以读取全局变量，并且函数内部的变量（局部变量）可以覆盖掉全局变量的值！！这一点非常令人头疼。</p>
 <p>看例子 </p>
 <pre><code>　var n=1
  function f1(){
@@ -519,6 +520,8 @@ var getName = function() {
 </code></pre><blockquote>
 <p>总结：Javascript中函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明在哪里定义，该函数都可以进行调用。而函数表达式的值是在JS运行时确定，并且在表达式赋值完成后，该函数才能调用。这个微小的区别，可能会导致JS代码出现意外</p>
 </blockquote>
+<p>参考资料：</p>
+<p> <a href="https://www.bbsmax.com/A/B0zq64o3Jv/" target="_blank" rel="noopener">https://www.bbsmax.com/A/B0zq64o3Jv/</a></p>
 <hr>
 <p>下一节写关于闭包的问题。。。。。<br>头疼！！！！</p>
 
