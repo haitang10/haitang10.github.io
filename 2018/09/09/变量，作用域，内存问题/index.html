@@ -109,25 +109,25 @@
 
 
 
-  <meta name="description" content="首先，什么是DOM？">
-<meta name="keywords" content="js,DOM,querySelector">
+  <meta name="description" content="本文转载自js基础教程https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">
+<meta name="keywords" content="变量,作用域,闭包,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM操作中的querySelector和getElementsby 的区别">
-<meta property="og:url" content="http://yoursite.com/2018/09/05/querySelector 和getElement区别/index.html">
+<meta property="og:title" content="变量，作用域，内存，闭包问题">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/变量，作用域，内存问题/index.html">
 <meta property="og:site_name" content="haitang10&#39;s blog">
-<meta property="og:description" content="首先，什么是DOM？">
+<meta property="og:description" content="本文转载自js基础教程https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-06T11:09:41.765Z">
+<meta property="og:updated_time" content="2018-09-09T06:27:55.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM操作中的querySelector和getElementsby 的区别">
-<meta name="twitter:description" content="首先，什么是DOM？">
+<meta name="twitter:title" content="变量，作用域，内存，闭包问题">
+<meta name="twitter:description" content="本文转载自js基础教程https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/05/querySelector 和getElement区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/09/变量，作用域，内存问题/"/>
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>DOM操作中的querySelector和getElementsby 的区别 | haitang10's blog</title>
+  <title>变量，作用域，内存，闭包问题 | haitang10's blog</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/querySelector 和getElement区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/变量，作用域，内存问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王贺">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DOM操作中的querySelector和getElementsby 的区别
+          <h1 class="post-title" itemprop="name headline">变量，作用域，内存，闭包问题
               
             
           </h1>
@@ -393,24 +393,12 @@
                 
               
 
-              <time title="创建时间：2018-09-05 10:03:02" itemprop="dateCreated datePublished" datetime="2018-09-05T10:03:02+08:00">2018-09-05</time>
+              <time title="创建时间：2018-09-09 13:53:20 / 修改时间：14:27:55" itemprop="dateCreated datePublished" datetime="2018-09-09T13:53:20+08:00">2018-09-09</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-06 19:09:41" itemprop="dateModified" datetime="2018-09-06T19:09:41+08:00">2018-09-06</time>
               
             
           </span>
@@ -441,7 +429,7 @@
 
           
           
-             <span id="/2018/09/05/querySelector 和getElement区别/" class="leancloud_visitors" data-flag-title="DOM操作中的querySelector和getElementsby 的区别">
+             <span id="/2018/09/09/变量，作用域，内存问题/" class="leancloud_visitors" data-flag-title="变量，作用域，内存，闭包问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,78 +461,469 @@
 
       
         <blockquote>
-<p>首先，什么是DOM？</p>
+<p>本文转载自js基础教程<br><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85" target="_blank" rel="noopener">https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85</a></p>
 </blockquote>
 <a id="more"></a>
-<h1 id="DOM概述"><a href="#DOM概述" class="headerlink" title="DOM概述"></a>DOM概述</h1><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。</p>
-<p>浏览器会根据 DOM 模型，将结构化文档（比如 HTML 和 XML）解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。每一个节点都是一个对象，有各自的属性和方法。</p>
-<p>DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言。后面介绍的就是 JavaScript 对 DOM 标准的实现和用法。</p>
-<h2 id="节点（node）"><a href="#节点（node）" class="headerlink" title="节点（node）"></a>节点（node）</h2><p>DOM 的最小组成单位叫做节点（node）。文档的树形结构（DOM 树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子。</p>
-<p>节点的类型有七种。</p>
-<ul>
-<li>Document：整个文档树的顶层节点</li>
-<li>DocumentType：doctype标签（<code>&lt;!D`</code>OCTYPE html&gt;`）</li>
-<li>Element：网页的各种HTML标签(<code>&lt;body&gt;</code>)</li>
-<li>Attribute：网页元素的属性（比如<code>class=&quot;right&quot;</code>）</li>
-<li>Text：标签之间或标签包含的文本</li>
-<li>Comment：注释</li>
-<li><p>DocumentFragment：文档的片段</p>
-<p>浏览器提供一个原生的节点对象Node，上面这七种节点都继承了Node，因此具有一些共同的属性和方法。</p>
-</li>
-</ul>
-<h2 id="关于node节点的详细内容如下"><a href="#关于node节点的详细内容如下" class="headerlink" title="关于node节点的详细内容如下"></a>关于node节点的详细内容如下</h2><p><a href="https://wangdoc.com/javascript/dom/general.html" target="_blank" rel="noopener">https://wangdoc.com/javascript/dom/general.html</a></p>
-<h1 id="操作节点异同"><a href="#操作节点异同" class="headerlink" title="操作节点异同"></a>操作节点异同</h1><p>document节点对象代表整个文档，每张网页都有自己的document对象，document对象还有很多自己的属性和方法。这里我们只涉及操作节点的方法。<br>今天讨论的两个方法有各自的优点和缺点，querySelector 方便，因为它是接受选择器作为参数，可以直接定位到要选择的元素，无需多次getElementby<br>而后者性能更好，鱼与熊掌，不可兼得。</p>
-<h2 id="document-querySelector"><a href="#document-querySelector" class="headerlink" title="document.querySelector()"></a>document.querySelector()</h2><p>document.querySelector方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回null。</p>
-<pre><code>var el1 = document.querySelector(&apos;.myclass&apos;);
-var el2 = document.querySelector(&apos;#myParent &gt; [ng-click]&apos;);
-</code></pre><p>document.querySelectorAll方法与querySelector用法类似，区别是返回一个NodeList对象，包含所有匹配给定选择器的节点。<br>这两个方法都支持复杂的 CSS 选择器。</p>
-<pre><code>// 选中 data-foo-bar 属性等于 someval 的元素
-document.querySelectorAll(&apos;[data-foo-bar=&quot;someval&quot;]&apos;);
+<h1 id="概述"><a href="#概述" class="headerlink" title="#概述"></a>#概述</h1><h2 id="函数的声明"><a href="#函数的声明" class="headerlink" title="##函数的声明"></a>##函数的声明</h2><p>JavaScript 有三种声明函数的方法。</p>
+<p>（1）function 命令</p>
+<p>function命令声明的代码区块，就是一个函数。function命令后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。</p>
+<pre><code>function print(s) {
+  console.log(s);
+}
+</code></pre><p>上面的代码命名了一个print函数，以后使用print()这种形式，就可以调用相应的代码。这叫做函数的声明（Function Declaration）。</p>
+<p>（2）函数表达式</p>
+<p>除了用function命令声明函数，还可以采用变量赋值的写法。</p>
+<pre><code>var print = function(s) {
+  console.log(s);
+};
+</code></pre><p>这种写法将一个匿名函数赋值给变量。这时，这个匿名函数又称函数表达式（Function Expression），因为赋值语句的等号右侧只能放表达式。</p>
+<p>采用函数表达式声明函数时，function命令后面不带有函数名。如果加上函数名，该函数名只在函数体内部有效，在函数体外部无效。</p>
+<pre><code>var print = function x(){
+  console.log(typeof x);
+};
+x
+// ReferenceError: x is not defined
+print()
+// function
+</code></pre><p>上面代码在函数表达式中，加入了函数名x。这个x只在函数体内部可用，指代函数表达式本身，其他地方都不可用。这种写法的用处有两个，一是可以在函数体内部调用自身，二是方便除错（除错工具显示函数调用栈时，将显示函数名，而不再显示这里是一个匿名函数）。因此，下面的形式声明函数也非常常见。</p>
+<p>var f = function f() {};<br>需要注意的是，函数的表达式需要在语句的结尾加上分号，表示语句结束。而函数的声明在结尾的大括号后面不用加分号。总的来说，这两种声明函数的方式，差别很细微，可以近似认为是等价的。</p>
+<p>（3）Function 构造函数</p>
+<p>第三种声明函数的方式是Function构造函数。</p>
+<pre><code>var add = new Function(
+  &apos;x&apos;,
+  &apos;y&apos;,
+  &apos;return x + y&apos;
+);
 
-// 选中 myForm 表单中所有不通过验证的元素
-document.querySelectorAll(&apos;#myForm :invalid&apos;);
+// 等同于
+function add(x, y) {
+  return x + y;
+}
+</code></pre><p>上面代码中，Function构造函数接受三个参数，除了最后一个参数是add函数的“函数体”，其他参数都是add函数的参数。</p>
+<p>你可以传递任意数量的参数给Function构造函数，只有最后一个参数会被当做函数体，如果只有一个参数，该参数就是函数体。</p>
+<pre><code>var foo = new Function(
+  &apos;return &quot;hello world&quot;;&apos;
+);
 
-// 选中div元素，那些 class 含 ignore 的除外
-document.querySelectorAll(&apos;DIV:not(.ignore)&apos;);
+// 等同于
+function foo() {
+  return &apos;hello world&apos;;
+}
+</code></pre><p>Function构造函数可以不使用new命令，返回结果完全一样。</p>
+<p>总的来说，这种声明函数的方式非常不直观，几乎无人使用。</p>
+<h2 id="函数的重复声明"><a href="#函数的重复声明" class="headerlink" title="##函数的重复声明"></a>##函数的重复声明</h2><p>如果同一个函数被多次声明，后面的声明就会覆盖前面的声明。</p>
+<pre><code>function f() {
+  console.log(1);
+}
+f() // 2
 
-// 同时选中 div，a，script 三类元素
-document.querySelectorAll(&apos;DIV, A, SCRIPT&apos;);
-</code></pre><p>但是，它们不支持 CSS 伪元素的选择器（比如:first-line和:first-letter）和伪类的选择器（比如:link和:visited），即无法选中伪元素和伪类。</p>
-<p>如果querySelectorAll方法的参数是字符串*，则会返回文档中的所有元素节点。另外，querySelectorAll的返回结果不是动态集合，不会实时反映元素节点的变化。</p>
-<p>最后，这两个方法除了定义在document对象上，还定义在元素节点上，即在元素节点上也可以调用。</p>
-<h2 id="document-getElementsBy"><a href="#document-getElementsBy" class="headerlink" title="document.getElementsBy"></a>document.getElementsBy</h2><p>这个方法有 </p>
-<ul>
-<li>document.getElementsByTagName()</li>
-<li>document.getElementsByClassName()</li>
-<li>document.getElementsByName()</li>
-<li>document.getElementById() （只能用在document上，不能element）</li>
-</ul>
-<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><ol>
-<li><p>querySelectorAll 返回的是一个 静态节点集合Static Node List，而 getElementsBy 系列的返回的是一个动态的集合 Live Node List。两种方法的区别就在于这个集合会不会自动更新。</p>
-<pre><code>x = document.querySelectorAll(&apos;img&apos;)
-y = document.getElementsByTagName(&apos;img&apos;)
-document.body.appendChild(new Image())
-x.length // 0
-y.length // 1
-</code></pre></li>
-</ol>
-<ol start="2">
-<li><p>实际上getElementsBy 返回的是HTMLcollection 对象。二者区别在于NodeList 对象会包含文档中的所有节点，如 Element、Text 和 Comment 等。HTMLCollection 对象只会包含文档中的 Element 节点。</p>
-<pre><code>var ul = document.getElementsByTagName(&apos;ul&apos;)[0],
-lis1 = ul.childNodes,
-lis2 = ul.children;
-console.log(lis1.toString(), lis1.length);    // &quot;[object NodeList]&quot; 11
-console.log(lis2.toString(), lis2.length);    // &quot;[object HTMLCollection]&quot; 4
-</code></pre></li>
-</ol>
-<ol start="3">
-<li>getElementBy系列的执行速度基本都是querySelectorAll的100+倍</li>
-<li>elem.children和elem.childNodes的区别？<br>elem.children属于html集合接口，将返回一个当前节点的所有子元素的动态的伪数组（元素节点）<br>elem.childNodes属于NodeList接口，将分返回一个当前节点的所有子节点的伪数组（所有子节点）</li>
-</ol>
-<hr>
-<p>参考资料： </p>
-<p><a href="https://www.zhihu.com/question/24702250" target="_blank" rel="noopener">https://www.zhihu.com/question/24702250</a></p>
-<p><a href="https://wangdoc.com/javascript/dom/general.html" target="_blank" rel="noopener">https://wangdoc.com/javascript/dom/general.html</a></p>
+function f() {
+  console.log(2);
+}
+f() // 2
+</code></pre><p>上面代码中，后一次的函数声明覆盖了前面一次。而且，由于函数名的提升（参见下文），前一次声明在任何时候都是无效的，这一点要特别注意。</p>
+<h2 id="圆括号运算符，return-语句和递归"><a href="#圆括号运算符，return-语句和递归" class="headerlink" title="##圆括号运算符，return 语句和递归"></a>##圆括号运算符，return 语句和递归</h2><p>调用函数时，要使用圆括号运算符。圆括号之中，可以加入函数的参数。</p>
+<pre><code>function add(x, y) {
+  return x + y;
+}
+
+add(1, 1) // 2
+</code></pre><p>上面代码中，函数名后面紧跟一对圆括号，就会调用这个函数。</p>
+<p>函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。return语句不是必需的，如果没有的话，该函数就不返回任何值，或者说返回undefined。</p>
+<p>函数可以调用自身，这就是递归（recursion）。下面就是通过递归，计算斐波那契数列的代码。</p>
+<pre><code>function fib(num) {
+  if (num === 0) return 0;
+  if (num === 1) return 1;
+  return fib(num - 2) + fib(num - 1);
+}
+
+fib(6) // 8
+</code></pre><p>上面代码中，fib函数内部又调用了fib，计算得到斐波那契数列的第6个元素是8。</p>
+<h2 id="第一等公民"><a href="#第一等公民" class="headerlink" title="##第一等公民"></a>##第一等公民</h2><p>JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。比如，可以把函数赋值给变量和对象的属性，也可以当作参数传入其他函数，或者作为函数的结果返回。函数只是一个可以执行的值，此外并无特殊之处。</p>
+<p>由于函数与其他数据类型地位平等，所以在 JavaScript 语言中又称函数为第一等公民。</p>
+<pre><code>function add(x, y) {
+  return x + y;
+}
+
+// 将函数赋值给一个变量
+var operator = add;
+
+// 将函数作为参数和返回值
+function a(op){
+  return op;
+}
+a(add)(1, 1)
+// 2
+</code></pre><h2 id="函数名的提升"><a href="#函数名的提升" class="headerlink" title="##函数名的提升"></a>##函数名的提升</h2><p>JavaScript 引擎将函数名视同变量名，所以采用function命令声明函数时，整个函数会像变量声明一样，被提升到代码头部。所以，下面的代码不会报错。</p>
+<pre><code>f();
+
+function f() {}
+</code></pre><p>表面上，上面代码好像在声明之前就调用了函数f。但是实际上，由于“变量提升”，函数f被提升到了代码头部，也就是在调用之前已经声明了。但是，如果采用赋值语句定义函数，JavaScript 就会报错。</p>
+<pre><code>f();
+var f = function (){};
+// TypeError: undefined is not a function
+上面的代码等同于下面的形式。
+
+var f;
+f();
+f = function () {};
+</code></pre><p>上面代码第二行，调用f的时候，f只是被声明了，还没有被赋值，等于undefined，所以会报错。因此，如果同时采用function命令和赋值语句声明同一个函数，最后总是采用赋值语句的定义。</p>
+<pre><code>var f = function () {
+  console.log(&apos;1&apos;);
+}
+
+function f() {
+  console.log(&apos;2&apos;);
+}
+
+f() // 1
+</code></pre><h1 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="#函数的属性和方法"></a>#函数的属性和方法</h1><h1 id="函数作用域"><a href="#函数作用域" class="headerlink" title="#函数作用域"></a>#函数作用域</h1><h2 id="定义"><a href="#定义" class="headerlink" title="##定义"></a>##定义</h2><p>作用域（scope）指的是变量存在的范围。在 ES5 的规范中，Javascript 只有两种作用域：一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；另一种是函数作用域，变量只在函数内部存在。ES6 又新增了块级作用域，本教程不涉及。</p>
+<p>函数外部声明的变量就是全局变量（global variable），它可以在函数内部读取。</p>
+<pre><code>var v = 1;
+
+function f() {
+  console.log(v);
+}
+
+f()
+// 1
+</code></pre><p>上面的代码表明，函数f内部可以读取全局变量v。</p>
+<p>在函数内部定义的变量，外部无法读取，称为“局部变量”（local variable）。</p>
+<pre><code>function f(){
+  var v = 1;
+}
+
+v // ReferenceError: v is not defined
+</code></pre><p>上面代码中，变量v在函数内部定义，所以是一个局部变量，函数之外就无法读取。</p>
+<p>函数内部定义的变量，会在该作用域内覆盖同名全局变量。</p>
+<pre><code>var v = 1;
+
+function f(){
+  var v = 2;
+  console.log(v);
+}
+
+f() // 2
+v // 1
+</code></pre><p>上面代码中，变量v同时在函数的外部和内部有定义。结果，在函数内部定义，局部变量v覆盖了全局变量v。</p>
+<p>注意，对于var命令来说，局部变量只能在函数内部声明，在其他区块中声明，一律都是全局变量。</p>
+<pre><code>if (true) {
+  var x = 5;
+}
+console.log(x);  // 5
+</code></pre><p>上面代码中，变量x在条件判断区块之中声明，结果就是一个全局变量，可以在区块之外读取。</p>
+<h2 id="函数内部的变量提升"><a href="#函数内部的变量提升" class="headerlink" title="##函数内部的变量提升"></a>##函数内部的变量提升</h2><p>与全局作用域一样，函数作用域内部也会产生“变量提升”现象。var命令声明的变量，不管在什么位置，变量声明都会被提升到函数体的头部。</p>
+<pre><code>function foo(x) {
+  if (x &gt; 100) {
+    var tmp = x - 100;
+  }
+}
+
+// 等同于
+function foo(x) {
+  var tmp;
+  if (x &gt; 100) {
+    tmp = x - 100;
+  };
+}
+</code></pre><h2 id="函数本身的作用域"><a href="#函数本身的作用域" class="headerlink" title="##函数本身的作用域"></a>##函数本身的作用域</h2><p>函数本身也是一个值，也有自己的作用域。它的作用域与变量一样，就是其声明时所在的作用域，与其运行时所在的作用域无关。</p>
+<pre><code>var a = 1;
+var x = function () {
+  console.log(a);
+};
+
+function f() {
+  var a = 2;
+  x();
+}
+
+f() // 1
+</code></pre><p>上面代码中，函数x是在函数f的外部声明的，所以它的作用域绑定外层，内部变量a不会到函数f体内取值，所以输出1，而不是2。</p>
+<p>总之，函数执行时所在的作用域，是定义时的作用域，而不是调用时所在的作用域。</p>
+<p>很容易犯错的一点是，如果函数A调用函数B，却没考虑到函数B不会引用函数A的内部变量。</p>
+<pre><code>var x = function () {
+  console.log(a);
+};
+
+function y(f) {
+  var a = 2;
+  f();
+}
+
+y(x)
+// ReferenceError: a is not defined
+</code></pre><p>上面代码将函数x作为参数，传入函数y。但是，函数x是在函数y体外声明的，作用域绑定外层，因此找不到函数y的内部变量a，导致报错。</p>
+<p>同样的，函数体内部声明的函数，作用域绑定函数体内部。</p>
+<pre><code>function foo() {
+  var x = 1;
+  function bar() {
+    console.log(x);
+  }
+  return bar;
+}
+
+var x = 2;
+var f = foo();
+f() // 1
+</code></pre><p>上面代码中，函数foo内部声明了一个函数bar，bar的作用域绑定foo。当我们在foo外部取出bar执行时，变量x指向的是foo内部的x，而不是foo外部的x。正是这种机制，构成了下文要讲解的“闭包”现象。</p>
+<h1 id="参数"><a href="#参数" class="headerlink" title="#参数"></a>#参数</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="##概述"></a>##概述</h2><p>函数运行的时候，有时需要提供外部数据，不同的外部数据会得到不同的结果，这种外部数据就叫参数。</p>
+<pre><code>function square(x) {
+  return x * x;
+}
+
+square(2) // 4
+square(3) // 9
+</code></pre><p>上式的x就是square函数的参数。每次运行的时候，需要提供这个值，否则得不到结果。</p>
+<p>参数的省略<br>函数参数不是必需的，Javascript 允许省略参数。</p>
+<pre><code>function f(a, b) {
+  return a;
+}
+
+f(1, 2, 3) // 1
+f(1) // 1
+f() // undefined
+
+f.length // 2
+</code></pre><p>上面代码的函数f定义了两个参数，但是运行时无论提供多少个参数（或者不提供参数），JavaScript 都不会报错。省略的参数的值就变为undefined。需要注意的是，函数的length属性与实际传入的参数个数无关，只反映函数预期传入的参数个数。</p>
+<p>但是，没有办法只省略靠前的参数，而保留靠后的参数。如果一定要省略靠前的参数，只有显式传入<br>    undefined。</p>
+<pre><code>function f(a, b) {
+  return a;
+}
+
+f( , 1) // SyntaxError: Unexpected token ,(…)
+f(undefined, 1) // undefined
+</code></pre><p>上面代码中，如果省略第一个参数，就会报错。</p>
+<p>传递方式<br>函数参数如果是原始类型的值（数值、字符串、布尔值），传递方式是传值传递（passes by value）。这意味着，在函数体内修改参数值，不会影响到函数外部。</p>
+<pre><code>var p = 2;
+
+function f(p) {
+  p = 3;
+}
+f(p);
+
+p // 2
+</code></pre><p>上面代码中，变量p是一个原始类型的值，传入函数f的方式是传值传递。因此，在函数内部，p的值是原始值的拷贝，无论怎么修改，都不会影响到原始值。</p>
+<p>但是，如果函数参数是复合类型的值（数组、对象、其他函数），传递方式是传址传递（pass by reference）。也就是说，传入函数的原始值的地址，因此在函数内部修改参数，将会影响到原始值。</p>
+<pre><code>var obj = { p: 1 };
+
+function f(o) {
+  o.p = 2;
+}
+f(obj);
+
+obj.p // 2
+</code></pre><p>上面代码中，传入函数f的是参数对象obj的地址。因此，在函数内部修改obj的属性p，会影响到原始值。</p>
+<p>注意，如果函数内部修改的，不是参数对象的某个属性，而是替换掉整个参数，这时不会影响到原始值。</p>
+<pre><code>var obj = [1, 2, 3];
+
+function f(o) {
+  o = [2, 3, 4];
+}
+f(obj);
+
+obj // [1, 2, 3]
+</code></pre><p>上面代码中，在函数f内部，参数对象obj被整个替换成另一个值。这时不会影响到原始值。这是因为，形式参数（o）的值实际是参数obj的地址，重新对o赋值导致o指向另一个地址，保存在原地址上的值当然不受影响。</p>
+<p>同名参数<br>如果有同名的参数，则取最后出现的那个值。</p>
+<pre><code>function f(a, a) {
+  console.log(a);
+}
+
+f(1, 2) // 2
+上面代码中，函数f有两个参数，且参数名都是a。取值的时候，以后面的a为准，即使后面的a没有值或被省略，也是以其为准。
+
+function f(a, a) {
+  console.log(a);
+}
+
+f(1) // undefined
+</code></pre><p>调用函数f的时候，没有提供第二个参数，a的取值就变成了undefined。这时，如果要获得第一个a的值，可以使用arguments对象。</p>
+<pre><code>function f(a, a) {
+  console.log(arguments[0]);
+}
+
+f(1) // 1
+</code></pre><h2 id="arguments-对象"><a href="#arguments-对象" class="headerlink" title="##arguments 对象"></a>##arguments 对象</h2><p>（1）定义</p>
+<p>由于 JavaScript 允许函数有不定数目的参数，所以需要一种机制，可以在函数体内部读取所有参数。这就是arguments对象的由来。</p>
+<p>arguments对象包含了函数运行时的所有参数，arguments[0]就是第一个参数，arguments[1]就是第二个参数，以此类推。这个对象只有在函数体内部，才可以使用。</p>
+<pre><code>var f = function (one) {
+  console.log(arguments[0]);
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+}
+
+f(1, 2, 3)
+// 1
+// 2
+// 3
+正常模式下，arguments对象可以在运行时修改。
+
+var f = function(a, b) {
+  arguments[0] = 3;
+  arguments[1] = 2;
+  return a + b;
+}
+
+f(1, 1) // 5
+</code></pre><p>上面代码中，函数f调用时传入的参数，在函数内部被修改成3和2。</p>
+<p>严格模式下，arguments对象是一个只读对象，修改它是无效的，但不会报错。</p>
+<pre><code>var f = function(a, b) {
+  &apos;use strict&apos;; // 开启严格模式
+  arguments[0] = 3; // 无效
+  arguments[1] = 2; // 无效
+  return a + b;
+}
+
+f(1, 1) // 2
+上面代码中，函数体内是严格模式，这时修改arguments对象就是无效的。
+
+通过arguments对象的length属性，可以判断函数调用时到底带几个参数。
+
+function f() {
+  return arguments.length;
+}
+
+f(1, 2, 3) // 3
+f(1) // 1
+f() // 0
+</code></pre><p>（2）与数组的关系</p>
+<p>需要注意的是，虽然arguments很像数组，但它是一个对象。数组专有的方法（比如slice和forEach），不能在arguments对象上直接使用。</p>
+<p>如果要让arguments对象使用数组方法，真正的解决方法是将arguments转为真正的数组。下面是两种常用的转换方法：slice方法和逐一填入新数组。</p>
+<pre><code>var args = Array.prototype.slice.call(arguments);
+
+// 或者
+var args = [];
+for (var i = 0; i &lt; arguments.length; i++) {
+  args.push(arguments[i]);
+}
+（3）callee 属性
+
+arguments对象带有一个callee属性，返回它所对应的原函数。
+
+var f = function () {
+  console.log(arguments.callee === f);
+}
+
+f() // true
+</code></pre><p>可以通过arguments.callee，达到调用函数自身的目的。这个属性在严格模式里面是禁用的，因此不建议使用。</p>
+<h1 id="函数的其他知识点"><a href="#函数的其他知识点" class="headerlink" title="#函数的其他知识点"></a>#函数的其他知识点</h1><h1 id="闭包"><a href="#闭包" class="headerlink" title="#闭包"></a>#闭包</h1><p>闭包（closure）是 Javascript 语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。</p>
+<p>理解闭包，首先必须理解变量作用域。前面提到，JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。</p>
+<pre><code>var n = 999;
+
+function f1() {
+  console.log(n);
+}
+f1() // 999
+</code></pre><p>上面代码中，函数f1可以读取全局变量n。</p>
+<p>但是，函数外部无法读取函数内部声明的变量。</p>
+<pre><code>function f1() {
+  var n = 999;
+}
+
+console.log(n)
+// Uncaught ReferenceError: n is not defined(
+</code></pre><p>上面代码中，函数f1内部声明的变量n，函数外是无法读取的。</p>
+<p>如果出于种种原因，需要得到函数内的局部变量。正常情况下，这是办不到的，只有通过变通方法才能实现。那就是在函数的内部，再定义一个函数。</p>
+<pre><code>function f1() {
+  var n = 999;
+  function f2() {
+　　console.log(n); // 999
+  }
+}
+</code></pre><p>上面代码中，函数f2就在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。这就是 JavaScript 语言特有的”链式作用域”结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
+<p>既然f2可以读取f1的局部变量，那么只要把f2作为返回值，我们不就可以在f1外部读取它的内部变量了吗！</p>
+<pre><code>function f1() {
+  var n = 999;
+  function f2() {
+    console.log(n);
+  }
+  return f2;
+}
+
+var result = f1();
+result(); // 999
+</code></pre><p>上面代码中，函数f1的返回值就是函数f2，由于f2可以读取f1的内部变量，所以就可以在外部获得f1的内部变量了。</p>
+<p>闭包就是函数f2，即能够读取其他函数内部变量的函数。由于在 JavaScript 语言中，只有函数内部的子函数才能读取内部变量，因此可以把闭包简单理解成“定义在一个函数内部的函数”。闭包最大的特点，就是它可以“记住”诞生的环境，比如f2记住了它诞生的环境f1，所以从f2可以得到f1的内部变量。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
+<p>闭包的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。请看下面的例子，闭包使得内部变量记住上一次调用时的运算结果。</p>
+<pre><code>function createIncrementor(start) {
+  return function () {
+    return start++;
+  };
+}
+
+var inc = createIncrementor(5);
+
+inc() // 5
+inc() // 6
+inc() // 7
+</code></pre><p>上面代码中，start是函数createIncrementor的内部变量。通过闭包，start的状态被保留了，每一次调用都是在上一次调用的基础上进行计算。从中可以看到，闭包inc使得函数createIncrementor的内部环境，一直存在。所以，闭包可以看作是函数内部作用域的一个接口。</p>
+<p>为什么会这样呢？原因就在于inc始终在内存中，而inc的存在依赖于createIncrementor，因此也始终在内存中，不会在调用结束后，被垃圾回收机制回收。</p>
+<p>闭包的另一个用处，是封装对象的私有属性和私有方法。</p>
+<pre><code>function Person(name) {
+  var _age;
+  function setAge(n) {
+    _age = n;
+  }
+  function getAge() {
+    return _age;
+  }
+
+  return {
+    name: name,
+    getAge: getAge,
+    setAge: setAge
+  };
+}
+
+var p1 = Person(&apos;张三&apos;);
+p1.setAge(25);
+p1.getAge() // 25
+</code></pre><p>上面代码中，函数Person的内部变量_age，通过闭包getAge和setAge，变成了返回对象p1的私有变量。</p>
+<p>注意，外层函数每次运行，都会生成一个新的闭包，而这个闭包又会保留外层函数的内部变量，所以内存消耗很大。因此不能滥用闭包，否则会造成网页的性能问题。</p>
+<p>立即调用的函数表达式（IIFE）<br>在 Javascript 中，圆括号()是一种运算符，跟在函数名之后，表示调用该函数。比如，print()就表示调用print函数。</p>
+<p>有时，我们需要在定义函数之后，立即调用该函数。这时，你不能在函数的定义之后加上圆括号，这会产生语法错误。</p>
+<pre><code>function(){ /* code */ }();
+// SyntaxError: Unexpected token (
+产生这个错误的原因是，function这个关键字即可以当作语句，也可以当作表达式。
+
+// 语句
+function f() {}
+
+// 表达式
+var f = function f() {}
+</code></pre><p>为了避免解析上的歧义，JavaScript 引擎规定，如果function关键字出现在行首，一律解释成语句。因此，JavaScript 引擎看到行首是function关键字之后，认为这一段都是函数的定义，不应该以圆括号结尾，所以就报错了。</p>
+<p>解决方法就是不要让function出现在行首，让引擎将其理解成一个表达式。最简单的处理，就是将其放在一个圆括号里面。</p>
+<pre><code>(function(){ /* code */ }());
+// 或者
+(function(){ /* code */ })();
+</code></pre><p>上面两种写法都是以圆括号开头，引擎就会认为后面跟的是一个表示式，而不是函数定义语句，所以就避免了错误。这就叫做“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称 IIFE。</p>
+<p>注意，上面两种写法最后的分号都是必须的。如果省略分号，遇到连着两个 IIFE，可能就会报错。</p>
+<pre><code>// 报错
+(function(){ /* code */ }())
+(function(){ /* code */ }())
+</code></pre><p>上面代码的两行之间没有分号，JavaScript 会将它们连在一起解释，将第二行解释为第一行的参数。</p>
+<p>推而广之，任何让解释器以表达式来处理函数定义的方法，都能产生同样的效果，比如下面三种写法。</p>
+<pre><code>var i = function(){ return 10; }();
+true &amp;&amp; function(){ /* code */ }();
+0, function(){ /* code */ }();
+</code></pre><p>甚至像下面这样写，也是可以的。</p>
+<pre><code>!function () { /* code */ }();
+~function () { /* code */ }();
+-function () { /* code */ }();
++function () { /* code */ }();
+</code></pre><p>通常情况下，只对匿名函数使用这种“立即执行的函数表达式”。它的目的有两个：一是不必为函数命名，避免了污染全局变量；二是 IIFE 内部形成了一个单独的作用域，可以封装一些外部无法读取的私有变量。</p>
+<pre><code>// 写法一
+var tmp = newData;
+processData(tmp);
+storeData(tmp);
+
+// 写法二
+(function () {
+  var tmp = newData;
+  processData(tmp);
+  storeData(tmp);
+}());
+</code></pre><p>上面代码中，写法二比写法一更好，因为完全避免了污染全局变量。</p>
+<h2 id="eval-命令"><a href="#eval-命令" class="headerlink" title="##eval 命令"></a>##eval 命令</h2><p>参考资料：</p>
 
       
     </div>
@@ -594,11 +973,13 @@ console.log(lis2.toString(), lis2.length);    // &quot;[object HTMLCollection]&q
       
         <div class="post-tags">
           
+            <a href="/tags/变量/" rel="tag"># 变量</a>
+          
+            <a href="/tags/作用域/" rel="tag"># 作用域</a>
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+          
             <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/DOM/" rel="tag"># DOM</a>
-          
-            <a href="/tags/querySelector/" rel="tag"># querySelector</a>
           
         </div>
       
@@ -611,8 +992,8 @@ console.log(lis2.toString(), lis2.length);    // &quot;[object HTMLCollection]&q
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/25/next 主题配置/" rel="next" title="博客个性化设置">
-                <i class="fa fa-chevron-left"></i> 博客个性化设置
+              <a href="/2018/09/06/js的作用域/" rel="next" title="js的作用域与声明提升">
+                <i class="fa fa-chevron-left"></i> js的作用域与声明提升
               </a>
             
           </div>
@@ -620,10 +1001,6 @@ console.log(lis2.toString(), lis2.length);    // &quot;[object HTMLCollection]&q
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/evernote/" rel="prev" title="evernote">
-                evernote <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -842,7 +1219,7 @@ console.log(lis2.toString(), lis2.length);    // &quot;[object HTMLCollection]&q
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM概述"><span class="nav-number">1.</span> <span class="nav-text">DOM概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">1.1.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点（node）"><span class="nav-number">1.2.</span> <span class="nav-text">节点（node）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于node节点的详细内容如下"><span class="nav-number">1.3.</span> <span class="nav-text">关于node节点的详细内容如下</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作节点异同"><span class="nav-number">2.</span> <span class="nav-text">操作节点异同</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-querySelector"><span class="nav-number">2.1.</span> <span class="nav-text">document.querySelector()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-getElementsBy"><span class="nav-number">2.2.</span> <span class="nav-text">document.getElementsBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">2.3.</span> <span class="nav-text">不同点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">#概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的声明"><span class="nav-number">1.1.</span> <span class="nav-text">##函数的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的重复声明"><span class="nav-number">1.2.</span> <span class="nav-text">##函数的重复声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆括号运算符，return-语句和递归"><span class="nav-number">1.3.</span> <span class="nav-text">##圆括号运算符，return 语句和递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一等公民"><span class="nav-number">1.4.</span> <span class="nav-text">##第一等公民</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名的提升"><span class="nav-number">1.5.</span> <span class="nav-text">##函数名的提升</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的属性和方法"><span class="nav-number">2.</span> <span class="nav-text">#函数的属性和方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数作用域"><span class="nav-number">3.</span> <span class="nav-text">#函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">##定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数内部的变量提升"><span class="nav-number">3.2.</span> <span class="nav-text">##函数内部的变量提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数本身的作用域"><span class="nav-number">3.3.</span> <span class="nav-text">##函数本身的作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数"><span class="nav-number">4.</span> <span class="nav-text">#参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">4.1.</span> <span class="nav-text">##概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments-对象"><span class="nav-number">4.2.</span> <span class="nav-text">##arguments 对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的其他知识点"><span class="nav-number">5.</span> <span class="nav-text">#函数的其他知识点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">6.</span> <span class="nav-text">#闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eval-命令"><span class="nav-number">6.1.</span> <span class="nav-text">##eval 命令</span></a></li></ol></li></ol></div>
             
 
           </div>
