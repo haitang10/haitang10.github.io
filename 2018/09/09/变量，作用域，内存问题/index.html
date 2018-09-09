@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="haitang10&#39;s blog">
 <meta property="og:description" content="本文转载自js基础教程https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-09T06:27:55.786Z">
+<meta property="og:updated_time" content="2018-09-09T06:39:46.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变量，作用域，内存，闭包问题">
 <meta name="twitter:description" content="本文转载自js基础教程https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-09-09 13:53:20 / 修改时间：14:27:55" itemprop="dateCreated datePublished" datetime="2018-09-09T13:53:20+08:00">2018-09-09</time>
+              <time title="创建时间：2018-09-09 13:53:20 / 修改时间：14:39:46" itemprop="dateCreated datePublished" datetime="2018-09-09T13:53:20+08:00">2018-09-09</time>
             
 
             
@@ -522,23 +522,7 @@ function f() {
 }
 f() // 2
 </code></pre><p>上面代码中，后一次的函数声明覆盖了前面一次。而且，由于函数名的提升（参见下文），前一次声明在任何时候都是无效的，这一点要特别注意。</p>
-<h2 id="圆括号运算符，return-语句和递归"><a href="#圆括号运算符，return-语句和递归" class="headerlink" title="##圆括号运算符，return 语句和递归"></a>##圆括号运算符，return 语句和递归</h2><p>调用函数时，要使用圆括号运算符。圆括号之中，可以加入函数的参数。</p>
-<pre><code>function add(x, y) {
-  return x + y;
-}
-
-add(1, 1) // 2
-</code></pre><p>上面代码中，函数名后面紧跟一对圆括号，就会调用这个函数。</p>
-<p>函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。return语句不是必需的，如果没有的话，该函数就不返回任何值，或者说返回undefined。</p>
-<p>函数可以调用自身，这就是递归（recursion）。下面就是通过递归，计算斐波那契数列的代码。</p>
-<pre><code>function fib(num) {
-  if (num === 0) return 0;
-  if (num === 1) return 1;
-  return fib(num - 2) + fib(num - 1);
-}
-
-fib(6) // 8
-</code></pre><p>上面代码中，fib函数内部又调用了fib，计算得到斐波那契数列的第6个元素是8。</p>
+<h2 id="圆括号运算符，return-语句和递归"><a href="#圆括号运算符，return-语句和递归" class="headerlink" title="##圆括号运算符，return 语句和递归"></a>##圆括号运算符，return 语句和递归</h2><p>函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。return语句不是必需的，如果没有的话，该函数就不返回任何值，或者说返回undefined。</p>
 <h2 id="第一等公民"><a href="#第一等公民" class="headerlink" title="##第一等公民"></a>##第一等公民</h2><p>JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。比如，可以把函数赋值给变量和对象的属性，也可以当作参数传入其他函数，或者作为函数的结果返回。函数只是一个可以执行的值，此外并无特殊之处。</p>
 <p>由于函数与其他数据类型地位平等，所以在 JavaScript 语言中又称函数为第一等公民。</p>
 <pre><code>function add(x, y) {
@@ -577,7 +561,7 @@ function f() {
 }
 
 f() // 1
-</code></pre><h1 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="#函数的属性和方法"></a>#函数的属性和方法</h1><h1 id="函数作用域"><a href="#函数作用域" class="headerlink" title="#函数作用域"></a>#函数作用域</h1><h2 id="定义"><a href="#定义" class="headerlink" title="##定义"></a>##定义</h2><p>作用域（scope）指的是变量存在的范围。在 ES5 的规范中，Javascript 只有两种作用域：一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；另一种是函数作用域，变量只在函数内部存在。ES6 又新增了块级作用域，本教程不涉及。</p>
+</code></pre><h1 id="函数作用域"><a href="#函数作用域" class="headerlink" title="#函数作用域"></a>#函数作用域</h1><h2 id="定义"><a href="#定义" class="headerlink" title="##定义"></a>##定义</h2><p>作用域（scope）指的是变量存在的范围。在 ES5 的规范中，Javascript 只有两种作用域：一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；另一种是函数作用域，变量只在函数内部存在。ES6 又新增了块级作用域，本教程不涉及。</p>
 <p>函数外部声明的变量就是全局变量（global variable），它可以在函数内部读取。</p>
 <pre><code>var v = 1;
 
@@ -838,10 +822,13 @@ console.log(n)
   }
   return f2;
 }
-
+f1()  //ƒ f2() {
+        console.log(n);
+              }
 var result = f1();
 result(); // 999
-</code></pre><p>上面代码中，函数f1的返回值就是函数f2，由于f2可以读取f1的内部变量，所以就可以在外部获得f1的内部变量了。</p>
+f1()() //999
+</code></pre><p>上面代码中，函数f1的返回值就是函数f2，由于f2可以读取f1的内部变量，所以就可以在外部获得f1的内部变量了。注意，直接输入f1(),得到的是返回函数f2,并不会真正运行，需要f1()()!!!!</p>
 <p>闭包就是函数f2，即能够读取其他函数内部变量的函数。由于在 JavaScript 语言中，只有函数内部的子函数才能读取内部变量，因此可以把闭包简单理解成“定义在一个函数内部的函数”。闭包最大的特点，就是它可以“记住”诞生的环境，比如f2记住了它诞生的环境f1，所以从f2可以得到f1的内部变量。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
 <p>闭包的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。请看下面的例子，闭包使得内部变量记住上一次调用时的运算结果。</p>
 <pre><code>function createIncrementor(start) {
@@ -1219,7 +1206,7 @@ storeData(tmp);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">#概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的声明"><span class="nav-number">1.1.</span> <span class="nav-text">##函数的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的重复声明"><span class="nav-number">1.2.</span> <span class="nav-text">##函数的重复声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆括号运算符，return-语句和递归"><span class="nav-number">1.3.</span> <span class="nav-text">##圆括号运算符，return 语句和递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一等公民"><span class="nav-number">1.4.</span> <span class="nav-text">##第一等公民</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名的提升"><span class="nav-number">1.5.</span> <span class="nav-text">##函数名的提升</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的属性和方法"><span class="nav-number">2.</span> <span class="nav-text">#函数的属性和方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数作用域"><span class="nav-number">3.</span> <span class="nav-text">#函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">##定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数内部的变量提升"><span class="nav-number">3.2.</span> <span class="nav-text">##函数内部的变量提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数本身的作用域"><span class="nav-number">3.3.</span> <span class="nav-text">##函数本身的作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数"><span class="nav-number">4.</span> <span class="nav-text">#参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">4.1.</span> <span class="nav-text">##概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments-对象"><span class="nav-number">4.2.</span> <span class="nav-text">##arguments 对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的其他知识点"><span class="nav-number">5.</span> <span class="nav-text">#函数的其他知识点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">6.</span> <span class="nav-text">#闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eval-命令"><span class="nav-number">6.1.</span> <span class="nav-text">##eval 命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">#概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的声明"><span class="nav-number">1.1.</span> <span class="nav-text">##函数的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的重复声明"><span class="nav-number">1.2.</span> <span class="nav-text">##函数的重复声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆括号运算符，return-语句和递归"><span class="nav-number">1.3.</span> <span class="nav-text">##圆括号运算符，return 语句和递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一等公民"><span class="nav-number">1.4.</span> <span class="nav-text">##第一等公民</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名的提升"><span class="nav-number">1.5.</span> <span class="nav-text">##函数名的提升</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数作用域"><span class="nav-number">2.</span> <span class="nav-text">#函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">##定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数内部的变量提升"><span class="nav-number">2.2.</span> <span class="nav-text">##函数内部的变量提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数本身的作用域"><span class="nav-number">2.3.</span> <span class="nav-text">##函数本身的作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数"><span class="nav-number">3.</span> <span class="nav-text">#参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">3.1.</span> <span class="nav-text">##概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments-对象"><span class="nav-number">3.2.</span> <span class="nav-text">##arguments 对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的其他知识点"><span class="nav-number">4.</span> <span class="nav-text">#函数的其他知识点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">5.</span> <span class="nav-text">#闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eval-命令"><span class="nav-number">5.1.</span> <span class="nav-text">##eval 命令</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1288,7 +1275,7 @@ storeData(tmp);
 <div class="theme-info">
   <div class="powered-by"></div>
     <i class="fa fa-pencil"></i>
-    <span class="post-count">博客全站共9.1k字</span>
+    <span class="post-count">博客全站共9.0k字</span>
   </div>
 </div>
 
