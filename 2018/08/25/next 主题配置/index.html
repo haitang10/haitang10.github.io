@@ -931,7 +931,9 @@ display: none !important;
 	var now = new Date();
 	var duration = now.getTime() - birthDay.getTime();
 	var total= Math.floor(duration / (1000 * 60 * 60 * 24));
-	document.getElementById('showDays').innerHTML='天若有情天亦老，长者为我续一秒。自2018年8月24日起本站已存活了 ' + total + '天'
+	//document.getElementById('showDays').innerHTML='天若有情天亦老，长者为我续一秒。自2018年8月24日起本站已存活了 ' + total + '天'
+  var pre = `<pre>天若有情天亦老，长者为我续一秒。自2018年8月24日起本站已存活了{total}天</pre>`
+  document.getElementById('showDays').appendchild(pre)
 </script>
 
         
