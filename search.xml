@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浏览器中输入URL后发生了什么]]></title>
+    <url>%2F2018%2F09%2F14%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5URL%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%2F</url>
+    <content type="text"><![CDATA[一个非常古老而又经典的问题 参考资料： https://segmentfault.com/a/1190000012092552- https://www.jianshu.com/p/c1dfc6caa520]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>浏览器渲染</tag>
+        <tag>HTTP请求</tag>
+        <tag>DNS服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一些零碎的知识]]></title>
     <url>%2F2018%2F09%2F12%2F%E4%B8%80%E4%BA%9B%E9%9B%B6%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[js数组操作返回值https://wangdoc.com/javascript/stdlib/array.html push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。 pop方法用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。对空数组使用pop方法，不会报错，而是返回undefined push和pop结合使用，就构成了“后进先出”的栈结构（stack）。 shift方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。 push和shift结合使用，就构成了“先进先出”的队列结构（queue） unshift方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。 参考资料：]]></content>
@@ -41,8 +54,8 @@
       <tags>
         <tag>作用域</tag>
         <tag>js</tag>
-        <tag>变量</tag>
         <tag>闭包</tag>
+        <tag>变量</tag>
       </tags>
   </entry>
   <entry>
@@ -60,7 +73,7 @@
   <entry>
     <title><![CDATA[evernote]]></title>
     <url>%2F2018%2F09%2F05%2Fevernote%2F</url>
-    <content type="text"><![CDATA[请输入密码啦！ Decrypt U2FsdGVkX19brYEMsi0isL31Fr4+VrnMAsmAVjIpgbgXeQjrlnpIeVVK9PECIwcLVE2NhCN/wfIJ0+qLY9HLtGn6c+FMEy9vd06ghZD7cDRnrcH6EszAE7cxNSRIOcuJoMNPFvJ8oJ4oyUba702kMI22N2MpbF83LIFmPwicKKQdrZFVRdQM2tkJmn+LY6HyIzEc/03vMQ5GGzjTL0YYrFQeeqETAIK3HAQPbOCK3b0x0U8CcYk4YGiHf39MVaRopdR68hUQw8eDmkylw6jqywXmf5EM0qQRtrxiOh0zbWrdzCVnem6VzujowKsINzhrcRa+zBWYNeow0qnOywxWN17z3C+Klg1EmPX9lZpGK5drsaDmF0KHLhpAxCjIphTv+NsHXk4D2YBdbpfL3L2gTkjcn/vK1oNXFPAecVDq/dxWlAWwM+eJi1IRDWblPYxjPyzln9kvQUTc+7GfLmPwoTGVVedtf36U0tMkGnfwrK5T0heE14JD2wwYlloX9sCm9CUCsuQhfIDmjb8xMn/JUNLQS9/4SF19C4XvXypW7N7l2o1iFEZBOuNO3CPlh14kMq2O1los88jPHB8BIb2rfOVkNk29NvYGWBIZaa6XQDG9Aqlu/oVOJYMloDoSHy+I1VWQL8ZY+4+i7mqu2sJvxd4uLdOIKSZzj7g/PMccInxoTBx7fGr8/6/lNYWKEt4L5PcuZbrAng6FxQk8/GILXjFzVHZhftnxWiqEF4DwvTW6tk0qnJkIFDyf4tBcbvUf1+iFTlp+G3dLsbvy6+BuX+Vj3IhlhrsNbPmp1zUFgPF4ZH/JpHYnky8dYiZXK7jeAohGVZRQTeYcJfs/PZiamLzcqZw1xz7ZiAIxM0WRHoJo35+ErfXiHsAwalw4SU34/530WGBzhDWLKXjVGs2nVJPCBv6lhMi6clxXBYFlpM+WjnsVGkSdy4OA9XVHGGiT]]></content>
+    <content type="text"><![CDATA[请输入密码啦！ Decrypt U2FsdGVkX19kgCbYbhv+c2UJTAbRe5c8OzVtaAiTVx/WlpMUW3WOHn5c74ULrG3nwYrbD6QZDehAeEgEnPpLrz8eBaTuNEb8hMZ5Ok/9xrAWwxbyTazaw3haFyvWZXQXaPZf8Bm2hjkRBjq0O48ptLkASkJwjJeeHDi75UgTW8860rcFmIUK0WgbLylrydYGPWBrFpZt6tjfH4SO3Vq3elRQ5VHyUeTBI8DLOAxe1kyK3I05fNqG/CmibcaM61X4sGYTeAtroeOIlSKnHKRAETsiNWWAp3J8VKE5+td1XCX2LbKFmEmf5fdXI5AUXaNDWXk2cj4a4CTOwjNI027owfr8ZIGZOMHMNM/2xBDvVTIDeD7Nb9hvL20AtKoYVCEdFI4sg7oS1WIBk2WlnErdTjZQMWqVW2H+x/xdJfrk8QB9SWhQ4RjDWhXqR+vD76EptT+XxwnQZztZsEb+iuqbUtaDz2xpREGn/7gOZAjiYx9mYdELZ+g/4p3CH4Nr9sSMEhST8w2djxn/xRx3IYikL1NbkH+3xaWPLTiqtda3yTB5FsVM+G3nkreWtQxG6JofUru2hBoiR3ZNjbaHn7dy587CnExj/Rm+TFDEMWoNGAsVf4pN3NI8OgaJlTT8LdFhlmYIJxWgOQPtQqZ3PZU/+J/lmDnQOD311JXy7ubMx3gVIGH4pGtwFfoOevYM9b14YIrt6z9cwCpMwn1JxfcaSfGazfxq/35NjmkEtBv23OuqHUan90xFFeRNUbtMyB0cW6sILse86lLEPGcoViRflRJW5MSFk/IJwRHWWITP/ro36ELv1FPdR0EOEQky9QU24Oh5/7kJArGc4ljPO2mfNB5wXEce9i9+rSascyqDUxb2ijShRCbFVzmcmU1zb0P7B+p4enpz7RWAa7DXZFjqIaSq68h3fhO23qoN4Yxnw2qY6cQ5w1dPQzj5SHwd/hgo]]></content>
       <categories>
         <category>生活随笔</category>
       </categories>
