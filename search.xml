@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[代码规范]]></title>
+    <url>%2F2018%2F10%2F01%2F%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[如果声明了全局变量，那么在函数内部就不能再对其进行声明！ 代码规范之关于全局变量和局部变量今天敲代码时发现了一个bug,调试了很久一直没有解决，后来才发现是全局变量和局部变量起了冲突，本来这块之前已经写了一篇文章，http://haitang10.top/2018/09/06/js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/#more 如果声明了全局变量，那么在函数内部就不能再声明全局变量了 首先说明一点，在函数内部如果不声明变量，实际上定义的是全局变量，bb的值被改变例如 `bb = 1; function aa(cc) { bb = 2; console.log(bb); }; aa(bb); //2 console.log(bb)`//2 但是如果声明了局部变量（无论是传参数还是使用var，都声明了一个新的变量）函数运行时会在内存中新建一个名为bb的变量，函数内部的操作只对新的bb产生影响，只在函数内部有效，函数结束时变量被释放。不会影响到全局变量bb。这一点从作用域来解释是函数内的console.log() 执行的时候要先在函数内部寻找bb，发现已经声明，并且赋值，就不会再向上层去寻找了，作用域链停止在函数内。 所以写代码时如果声明了全局变量，那么在函数内部就不能再声明全局变量了，因为这个函数目的就是对全局变量做修改 var initFonSize = Utli.StorageGetter(&apos;font_size&apos;) var setFont = function(){ if(!initFonSize){ initFonSize = 14 // 直接对全局变量做修改，不要再var } log(&apos;字体大小&apos;, initFonSize) initFonSize = parseInt(initFonSize)// 直接对全局变量做修改，不要再var log(&apos;字体大小&apos;, typeof(initFonSize),initFonSize) //设置字体大小 Dom.content_size.css(&apos;font-size&apos;, initFonSize) } setFont() 或者可以这样 参考资料：]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[原型，原型链，继承，对象，实例]]></title>
+    <url>%2F2018%2F09%2F26%2F%E5%8E%9F%E5%9E%8B%EF%BC%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%2F</url>
+    <content type="text"><![CDATA[关于js 中的原型，原型链参考 https://wangdoc.com/javascript/oop/new.htmlhttps://wangdoc.com/javascript/oop/prototype.html 参考资料：]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>原型</tag>
+        <tag>原型链</tag>
+        <tag>继承</tag>
+        <tag>对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[layout]]></title>
+    <url>%2F2018%2F09%2F23%2Flayout%2F</url>
+    <content type="text"><![CDATA[参考资料：]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[面试技巧]]></title>
+    <url>%2F2018%2F09%2F19%2F%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[参考资料：]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[浏览器中输入URL后发生了什么]]></title>
     <url>%2F2018%2F09%2F14%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5URL%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%2F</url>
     <content type="text"><![CDATA[一个非常古老而又经典的问题 参考资料： https://segmentfault.com/a/1190000012092552- https://www.jianshu.com/p/c1dfc6caa520]]></content>
@@ -24,7 +53,7 @@
   <entry>
     <title><![CDATA[阅读列表]]></title>
     <url>%2F2018%2F09%2F11%2F%E9%98%85%E8%AF%BB%E5%88%97%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[JavaScript 浮点数陷阱及解法 https://github.com/camsong/blog/issues/9 You-Dont-Need-jQuery https://github.com/nefe/You-Dont-Need-jQuery 参考资料：]]></content>
+    <content type="text"><![CDATA[JavaScript 浮点数陷阱及解法 https://github.com/camsong/blog/issues/9 You-Dont-Need-jQuery https://github.com/nefe/You-Dont-Need-jQuery 排序算法时间复杂度，空间复杂度，稳定性比较 https://blog.csdn.net/yushiyi6453/article/details/76407640 无序数组排序后的最大相邻差值https://juejin.im/post/5a44acaa6fb9a0451d41c850 面试中的 10 大排序算法总结 https://github.com/francistao/LearningNotes/blob/master/Part3/Algorithm/Sort/%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%2010%20%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.md CSS绝对定位absolute详解 https://www.jianshu.com/p/a3da5e27d22b 参考资料：]]></content>
       <categories>
         <category>阅读列表</category>
       </categories>
@@ -73,7 +102,7 @@
   <entry>
     <title><![CDATA[evernote]]></title>
     <url>%2F2018%2F09%2F05%2Fevernote%2F</url>
-    <content type="text"><![CDATA[请输入密码啦！ Decrypt U2FsdGVkX19kgCbYbhv+c2UJTAbRe5c8OzVtaAiTVx/WlpMUW3WOHn5c74ULrG3nwYrbD6QZDehAeEgEnPpLrz8eBaTuNEb8hMZ5Ok/9xrAWwxbyTazaw3haFyvWZXQXaPZf8Bm2hjkRBjq0O48ptLkASkJwjJeeHDi75UgTW8860rcFmIUK0WgbLylrydYGPWBrFpZt6tjfH4SO3Vq3elRQ5VHyUeTBI8DLOAxe1kyK3I05fNqG/CmibcaM61X4sGYTeAtroeOIlSKnHKRAETsiNWWAp3J8VKE5+td1XCX2LbKFmEmf5fdXI5AUXaNDWXk2cj4a4CTOwjNI027owfr8ZIGZOMHMNM/2xBDvVTIDeD7Nb9hvL20AtKoYVCEdFI4sg7oS1WIBk2WlnErdTjZQMWqVW2H+x/xdJfrk8QB9SWhQ4RjDWhXqR+vD76EptT+XxwnQZztZsEb+iuqbUtaDz2xpREGn/7gOZAjiYx9mYdELZ+g/4p3CH4Nr9sSMEhST8w2djxn/xRx3IYikL1NbkH+3xaWPLTiqtda3yTB5FsVM+G3nkreWtQxG6JofUru2hBoiR3ZNjbaHn7dy587CnExj/Rm+TFDEMWoNGAsVf4pN3NI8OgaJlTT8LdFhlmYIJxWgOQPtQqZ3PZU/+J/lmDnQOD311JXy7ubMx3gVIGH4pGtwFfoOevYM9b14YIrt6z9cwCpMwn1JxfcaSfGazfxq/35NjmkEtBv23OuqHUan90xFFeRNUbtMyB0cW6sILse86lLEPGcoViRflRJW5MSFk/IJwRHWWITP/ro36ELv1FPdR0EOEQky9QU24Oh5/7kJArGc4ljPO2mfNB5wXEce9i9+rSascyqDUxb2ijShRCbFVzmcmU1zb0P7B+p4enpz7RWAa7DXZFjqIaSq68h3fhO23qoN4Yxnw2qY6cQ5w1dPQzj5SHwd/hgo]]></content>
+    <content type="text"><![CDATA[请输入密码啦！ Decrypt U2FsdGVkX1/QSyaQqbVvcQcdlD8apm+3K6YCX0gsP0kIr4HEMjtzcLpH2Oq0fe5cREeOz/AHJq0zgnEpQGtU7wmctWb0HDnC9RzN943nfxtcDlFEzWDLrleJudJ4QvWYKPr0wHMdn1/xldGWFAw7Z1igH0W/OABSLpI7dGsImCEVd9oh2KhXXG6TbKyU9JKH1d39+jRPyxq++V+Fr6fWYc8qB0LlYBCMhIkbS7fJSt4ilcrPmCEz+a9o+QQXmeoWfx1XyG29/6qKRUzNBYjxiL7IdMcFpB/1lfrPDBmZC+XxjiD0NTaVYooefOSGubzASxas/+gNfkn2ws6K0pDSCWaHC3NhF59uEIInAXpSL8zHYg2ZouI6nHjSeZYdtxiJim+wGu8+xnBGPkYqLdXTxl5xxf5upRc/oXKmmCBGv3kaAC/cjSka/xQDqNumW/EXLbW4L3PyiHSYc2KcU4yxf1CtNOAHnAzFV1mLFTo2SsV2c0up6DFdDsgjGInzClizT4Kz+D7MxQQXY6SFvtvyzUeu0OKtHye+m41UUC8DBTNd+io6b+8S04QOjItnlmWjh93noRh1L2XZnblpay/5mv+uy8NjKG7enDH2HP7A4K5H3t1DfQB1EXO6Oewjm7+Yg5eG5zQc4rWhelwO7XNqrrrYf/GMr/uuzushe00Omjfa2gUAUAqPUg7QOMtLppX3iWhB72iHOoCTB07tuy6ZPw+vNF/MspObrAfzB3yyuOYUlHCnw6LIx7hPWA32ljf4j8TrDAFaeSbDLCvC4WHEMrq5ohq/XrZ0Ky4KbAsw2y8Lyc/HH/yYvcvSa7J39e54OORzW31ph3CDzIawLCq1QEWXYXdhiiaUkLDdrCrYhI6ej6q6z/A8vGABC2Cj+aLZQ+nov2VqCoJ9qDePzhVI4VrKw7SM/46sXX2BMZgkOiTMAD9wBmpd384ZSyUODNh4]]></content>
       <categories>
         <category>生活随笔</category>
       </categories>
